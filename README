@@ -1,0 +1,63 @@
+************************************************************************
+Dimitar Dimitrov                                                 0922289
+CIS4010                                                               A1
+January 26, 2020
+************************************************************************
+
+This assignment uses python scripts to compare AWS and Azure products.
+In particular I explore Amazon S3 and DynamoDB, and Azure Blob Storage
+along with CosmosDB.
+
+
+Setup
+-----
+    - Install virtual environment creator and package manager package 
+      pipenv:
+
+      pip install pipenv
+
+    - Install all project dependencies:
+
+      pipenv install
+
+    - Configure ~/.aws/credentials file with your access token
+
+    - Set AZURE_STORAGE_CONNECTION_STRING environment variable with your
+      blob storage connection string.
+
+    - Change database connection string in config.py to your cosmosDB 
+      instance.
+
+Usage
+-----
+    - S3 Data Loader:
+    pipenv run python3 createPopContainersAWS.py
+    pipenv run python3 createPopContainersAWS.py reset //for teardown
+    
+    - Blob Storage Loader:
+    pipenv run python3 createPopContainersAzure.py
+    pipenv run python3 createPopContainersAzure.py reset //for teardown
+
+    - S3 Client Program:
+    pipenv run python3 storageApplianceAWS.py
+
+    - Blob Storage Client Program:
+    pipenv run python3 storageApplianceAzure.py
+
+    - DynamoDB Data Loader:
+    pipenv run python3 createMovieDBAWS.py
+
+    - Azure CosmosDB Data Loader:
+    pipenv run python3 createMovieDBAzure.py
+
+    - DynamoDB Client Program:
+    pipenv run python3 queryDBAWS.py
+
+    - Azure CosmosDB Client Program (IN PROGRESS):
+    pipenv run python3 queryDBAzure.py
+
+Notes
+-----
+    - Dynamo Client:
+    By default the projected attributes are year, title, and 
+    info.rating. User can add more but can't take these away.

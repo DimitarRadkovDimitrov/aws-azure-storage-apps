@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+boto3 = "*"
+botocore-python3 = "*"
+azure-storage-blob = "*"
+azure-cosmos = "*"
+pymongo = "*"
+ptable = "*"
+
+[requires]
+python_version = "3.8"
